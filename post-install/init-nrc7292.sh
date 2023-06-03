@@ -25,14 +25,18 @@ sudo modprobe mac80211
 # Again, this script had to be un-pi'ed
 #
 # sudo ${NRC}/sw/firmware/copy 7292
+# 
+# I also had to find an alternative bd_dat file, since the Alfa HAT has a different ID to the NRC7292 EVK.
+# https://github.com/newracom/nrc7292_sw_pkg/issues/60
 cp -v "${NRC}/sw/firmware/nrc7292_cspi.bin" "${NRC}/sw/firmware/uni_s1g.bin"
 sudo cp -v "${NRC}/sw/firmware/uni_s1g.bin" /lib/firmware
-sudo cp -v "${NRC}/sw/firmware/nrc7292_bd.dat" /lib/firmware
+#sudo cp -v "${NRC}/sw/firmware/nrc7292_bd.dat" /lib/firmware
+sudo cp -v "nrc7292_AHPI7292S_bd.dat" /lib/firmware/nrc7292_bd.dat
 ls -al /lib/firmware/uni_s1g*
 
 
-# Load the module with the huge list of parameters
-NRCPARAMS="hifspeed=20000000 spi_bus_num=0 spi_cs_num=0 spi_gpio_irq=5 spi_polling_interval=0 fw_name=uni_s1g.bin auto_ba=1 listen_interval=1000"
+# Load the module with the huge list of parameters.
+NRCPARAMS="hifspeed=20000000 spi_bus_num=0 spi_cs_num=0 spi_gpio_irq=5 spi_polling_interval=0 fw_name=uni_s1g.bin auto_ba=1 listen_interval=1000 debug_level_all=1"
 
 # Finally, attempt to load the driver and start the WiFi HaLow device!
 sudo insmod "${NRC}/sw/driver/nrc.ko" "${NRCPARAMS}"

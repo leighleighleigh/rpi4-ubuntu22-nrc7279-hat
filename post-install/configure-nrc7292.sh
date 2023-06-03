@@ -11,6 +11,9 @@ NRCCLI="/home/${SUDO_USER:-$USER}/nrc_pkg/script/cli_app"
 # Check the result of ip a - you should now have a 'wlan1' device!! Yay!!
 ip -s -d link show wlan1
 
+# Turn on the device!
+sudo ip link set wlan1 up
+
 # Max power is 24?
 $NRCCLI set txpwr 24 
 

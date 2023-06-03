@@ -54,7 +54,7 @@ popd
 
 
 ###
-# Finally, rebuild the CLI app
+# rebuild the CLI app
 pushd package/host/src/cli_app/
 make clean
 make

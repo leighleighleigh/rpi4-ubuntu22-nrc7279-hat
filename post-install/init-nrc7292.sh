@@ -37,6 +37,9 @@ NRCPARAMS="hifspeed=20000000 spi_bus_num=0 spi_cs_num=0 spi_gpio_irq=5 spi_polli
 # Finally, attempt to load the driver and start the WiFi HaLow device!
 sudo insmod "${NRC}/sw/driver/nrc.ko" "${NRCPARAMS}"
 
+# It takes a few seconds to load up
+sleep 5
+
 # Check the result of ip a - you should now have a 'wlan1' device!! Yay!!
 ip -s -d link show wlan1
 

@@ -1,5 +1,5 @@
 # rpi4-ubuntu22-nrc7279-hat
-A few scripts for use with the Alfa Networks NRC7279 WiFi HaLow HAT, on Ubuntu 22
+A few scripts for use with the Alfa Networks AHPI7292S WiFi HaLow HAT, on Ubuntu 22
 
 WORK IN PROGRESS! :)
  - [x] DT overlay to disable SPI working

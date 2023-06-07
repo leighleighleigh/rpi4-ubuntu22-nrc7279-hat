@@ -12,6 +12,10 @@
 # Tested using a Raspberry Pi 4 (2GB), running
 # Ubuntu Server 22.04 LTS (jammy), fresh install
 
+# Update and install build-essential
+sudo apt update
+sudo apt --assume-yes install build-essential
+
 # Get source, and hop into it's folder
 cd
 git clone --depth 1 https://github.com/newracom/nrc7292_sw_pkg

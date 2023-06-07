@@ -20,4 +20,6 @@ $NRCCLI set txpwr 24
 # Guard interval is long (idk what that means!)
 $NRCCLI set gi 'long'
 
-$NRCCLI
+#$NRCCLI
+echo "Starting open access point on wlan1"
+sudo wpa_supplicant -iwlan1 -c ./confs/sta_halow_open.conf

@@ -17,8 +17,9 @@ sudo apt update
 sudo apt --assume-yes install build-essential
 
 # Add the required modules
-sudo echo "i2c-dev" >> /etc/modules
-sudo echo "mac80211" >> /etc/modules
+sudo echo "i2c-dev" | sudo tee -a /etc/modules
+sudo echo "mac80211" | sudo tee -a /etc/modules
+
 sudo modprobe i2c-dev
 sudo modprobe mac80211
 

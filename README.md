@@ -12,9 +12,9 @@ WORK IN PROGRESS! :)
  - [x] iperf3 evaluation (1.5mbit ish)
 
 # Tips
-Make sure your kernel and OS are up to date!
-The versions below **worked reliably:**
+Make sure your kernel and OS are up to date! (`apt update && apt upgrade`).
 
+I recommend a kernel version of **`5.15.0-1029-raspi` or higher.**
 ```bash
 ubuntu@piAB:~$ uname -a
 Linux piAB 5.15.0-1029-raspi #31-Ubuntu SMP PREEMPT Sat Apr 22 12:26:40 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
@@ -27,7 +27,7 @@ Release:	22.04
 Codename:	jammy
 ```
 
-In contrast, the kernel version below **would repeatedly segfault**, and fail to initialise the driver.
+I experienced **repeated segfaults** on the kernel version below, and the driver would **fail to load**.
 ```bash
 Linux piAA 5.15.0-1024-raspi #26-Ubuntu SMP PREEMPT Wed Jan 18 15:29:53 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
 ```

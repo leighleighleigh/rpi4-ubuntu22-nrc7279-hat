@@ -6,6 +6,7 @@ WORK IN PROGRESS! :)
  - [x] Driver builds successfully
  - [x] Firmware being loaded correctly for host-mode
  - [x] Hacky hard-coded `insmod` call working, `wlan1` device appearing
- - [ ] STA/AP mode working
+ - [x] STA/AP mode working
+ - [ ] STA/AP mode working *reliably*
  - [ ] SNIFFER/MESH modes working
- - [ ] iperf3 evaluation
+ - [x] iperf3 evaluation (1.5mbit ish)

@@ -16,6 +16,12 @@
 sudo apt update
 sudo apt --assume-yes install build-essential
 
+# Add the required modules
+sudo echo "i2c-dev" >> /etc/modules
+sudo echo "mac80211" >> /etc/modules
+sudo modprobe i2c-dev
+sudo modprobe mac80211
+
 # Get source, and hop into it's folder
 cd
 git clone --depth 1 https://github.com/newracom/nrc7292_sw_pkg

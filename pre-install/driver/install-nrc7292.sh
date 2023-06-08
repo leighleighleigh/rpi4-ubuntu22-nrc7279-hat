@@ -48,11 +48,12 @@ pushd package/host/src/nrc
 
 # Make!
 sudo apt --assume-yes install make gcc build-essential
+make clean
 make -j2
 
 # Copy the compiled blob (and make backup of original)
 # into the ~/nrc_pkg folder
-cp -b nrc.ko ~/nrc_pkg/sw/driver/
+cp nrc.ko ~/nrc_pkg/sw/driver/
 
 popd
 
@@ -61,7 +62,7 @@ popd
 # rebuild the CLI app
 pushd package/host/src/cli_app/
 make clean
-make
+make -j2
 cp cli_app ~/nrc_pkg/script/cli_app
 
 popd

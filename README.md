@@ -12,22 +12,35 @@ WORK IN PROGRESS! :)
  - [x] iperf3 evaluation (1.5mbit ish)
 
 # Tips
-Make sure your kernel and OS are up to date! (`apt update && apt upgrade`).
-
+Make sure your kernel and **firmware** are up to date! (`apt update && apt upgrade`).
 I recommend a kernel version of **`5.15.0-1029-raspi` or higher.**
-```bash
-ubuntu@piAB:~$ uname -a
-Linux piAB 5.15.0-1029-raspi #31-Ubuntu SMP PREEMPT Sat Apr 22 12:26:40 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
 
-ubuntu@piAB:~$ lsb_release -a
-No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 22.04.2 LTS
-Release:	22.04
-Codename:	jammy
+Here is a pi firmware version which is working
+```bash
+ubuntu@piAB:~$ rpi-eeprom-update
+*** UPDATE AVAILABLE ***
+BOOTLOADER: update available
+   CURRENT: Thu Apr 29 04:11:25 PM UTC 2021 (1619712685)
+    LATEST: Tue Jan 25 02:30:41 PM UTC 2022 (1643121041)
+   RELEASE: default (/lib/firmware/raspberrypi/bootloader/default)
+            Use raspi-config to change the release.
+
+  VL805_FW: Using bootloader EEPROM
+     VL805: version unknown. Try sudo rpi-eeprom-update
+   CURRENT: 
+    LATEST: 
 ```
-
-I experienced **repeated segfaults** on the kernel version below, and the driver would **fail to load**.
+Compared to one which always segfaults.
 ```bash
-Linux piAA 5.15.0-1024-raspi #26-Ubuntu SMP PREEMPT Wed Jan 18 15:29:53 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
+*** UPDATE AVAILABLE ***
+BOOTLOADER: update available
+   CURRENT: Thu Sep  3 12:11:43 PM UTC 2020 (1599135103)
+    LATEST: Tue Jan 25 02:30:41 PM UTC 2022 (1643121041)
+   RELEASE: default (/lib/firmware/raspberrypi/bootloader/default)
+            Use raspi-config to change the release.
+
+  VL805_FW: Dedicated VL805 EEPROM
+     VL805: version unknown. Try sudo rpi-eeprom-update
+   CURRENT: 
+    LATEST: 000138a1
 ```

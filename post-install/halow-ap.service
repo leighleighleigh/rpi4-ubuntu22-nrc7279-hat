@@ -1,0 +1,13 @@
+[Unit]
+Description=WiFi Halow WPA2 AP Service
+After=network.target
+
+[Service]
+Type=simple
+Restart=no
+ExecStart=post-install/srv-ap.sh
+WorkingDirectory=/home/ubuntu/rpi4-ubuntu22-nrc7279-hat
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

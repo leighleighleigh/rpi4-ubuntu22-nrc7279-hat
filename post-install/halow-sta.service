@@ -1,0 +1,13 @@
+[Unit]
+Description=WiFi Halow WPA2 STA Service
+After=network.target
+
+[Service]
+Type=simple
+Restart=no
+ExecStart=post-install/srv-sta.sh
+WorkingDirectory=/home/ubuntu/rpi4-ubuntu22-nrc7279-hat
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

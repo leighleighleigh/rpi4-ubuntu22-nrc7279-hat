@@ -4,6 +4,5 @@
 ./configure-nrc7292.sh
 ./assign-ip.sh "172.16.0.2"
 
-#sudo hostapd ./confs/ap_halow_open.conf -dddd
-echo "Starting WPA2 access point on wlan1"
-sudo hostapd ./confs/sta_halow_wpa2.conf -dddd
+echo "Starting WPA2 station on wlan1"
+sudo wpa_supplicant -iwlan1 -c ./confs/sta_halow_wpa2.conf -dddd
